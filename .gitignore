@@ -1,0 +1,8 @@
+# editor artifacts
+*.sw*
+*.un*
+*~
+
+# folders
+bin
+tmp
