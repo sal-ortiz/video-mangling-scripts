@@ -22,7 +22,7 @@ if [ -z $OUTP_FILE ]; then
 fi
 
 
-cp -f $INP_FILE $TMP_FILE
+cp -fv $INP_FILE $TMP_FILE
 
 $BIN_PATH/exiftool -r -overwrite_original -title= -comment= -subtitle= $TMP_FILE
 
