@@ -7,11 +7,11 @@ TMP_PATH=$APP_ROOT/tmp
 BIN_PATH=$APP_ROOT/bin
 
 if [ -d $BIN_PATH ]; then
-  rm -rf $BIN_PATH
+  rm -rfv $BIN_PATH
 fi
 
 if [ -d $TMP_PATH ]; then
-  rm -rf $TMP_PATH
+  rm -rfv $TMP_PATH
 fi
 
 exit 0
