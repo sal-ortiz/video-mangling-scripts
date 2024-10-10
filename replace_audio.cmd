@@ -33,6 +33,3 @@ copy /y /v /d "%VID_INPUT%" "%TMP_FILE%"
 del /q /f "%TMP_FILE%"
 
 exit /b 0
-
-
-
