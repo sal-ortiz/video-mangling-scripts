@@ -25,7 +25,7 @@ if "%OUTP_FILE%" == "" (
 )
 
 
-copy /y /v /d "%INP_FILE%" "%TMP_FILE%" > nul
+copy /y /v /d "%INP_FILE%" "%TMP_FILE%"
 
 %BIN_PATH%\ffmpeg -y -i "%TMP_FILE%" -vcodec libx265 -crf %CRF_VAL% "%OUTP_FILE%"
 

@@ -26,7 +26,7 @@ if "%OUTP_FILE%" == "" (
   set OUTP_FILE=%VID_INPUT%
 )
 
-copy /y /v /d "%VID_INPUT%" "%TMP_FILE%" > nul
+copy /y /v /d "%VID_INPUT%" "%TMP_FILE%"
 
 %BIN_PATH%\ffmpeg -y -i "%TMP_FILE%" -i %AUD_INPUT% -c:v copy -map 0:v:0 -map 1:a:0 %OUTP_FILE%
 
