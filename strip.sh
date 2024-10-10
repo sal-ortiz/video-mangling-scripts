@@ -24,7 +24,7 @@ fi
 
 cp -fv $INP_FILE $TMP_FILE
 
-$BIN_PATH/exiftool -r -overwrite_original -title= -comment= -subtitle= $TMP_FILE
+$BIN_PATH/exiftool -r -overwrite_original -title= -comment= -subtitle= -artist= -album= $TMP_FILE
 
 mv -f $TMP_FILE $OUTP_FILE
 
