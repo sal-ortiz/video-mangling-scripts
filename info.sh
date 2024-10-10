@@ -14,6 +14,6 @@ if [ -z $1 ]; then
   exit 1
 fi
 
-$BIN_PATH/exiftool -*Title* -*Comment* $INP_FILE
+$BIN_PATH/exiftool -*title* -*subtitle* -*comment* -*artist* -*album* $INP_FILE
 
 exit 0

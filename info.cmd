@@ -15,6 +15,6 @@ if "%INP_FILE%" == "" (
 
 
 ::%BIN_PATH%\ffprobe -loglevel error -show_entries stream_tags:format_tags -of json "%INP_FILE%"
-%BIN_PATH%\exiftool -*Title* -*Comment* "%INP_FILE%"
+%BIN_PATH%\exiftool -*title* -*subtitle* -*comment* -*artist* -*album* "%INP_FILE%"
 
 exit /b 0
