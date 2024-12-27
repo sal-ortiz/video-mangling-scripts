@@ -6,14 +6,16 @@ USER_PATH=$( pwd )
 TMP_PATH=$APP_ROOT/tmp
 BIN_PATH=$APP_ROOT/bin
 
-INP_FILE=$1
-OUTP_FILE=$2
+# the lower the value the higher the bitrate
+# (24~30 is a good medium). zero is lossless.
+CRF_VAL=$1
 
-# the lower the value the higher the bitrate (24~30 is a good medium)
-CRF_VAL=33
+INP_FILE=$2
+OUTP_FILE=$3
 
-if [ -z "$INP_FILE" ]; then
-  echo "$( basename $0 ) <input> [output]"
+
+if [ -z "$INP_FILE" ] || [ -z "$CRF_VAL" ]; then
+  echo "$( basename $0 ) <crf> <input> [output]"
 
   exit 1
 fi
