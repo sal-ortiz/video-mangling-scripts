@@ -14,6 +14,7 @@ if [ -z "$INP_FILE" ]; then
   exit 1
 fi
 
+"$BIN_PATH/exiftool" "$INP_FILE"
 "$BIN_PATH/exiftool" -time:all -a -G0:1 -s "$INP_FILE"
 
 exit 0
