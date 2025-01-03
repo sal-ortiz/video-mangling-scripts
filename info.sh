@@ -8,7 +8,7 @@ BIN_PATH=$APP_ROOT/bin
 
 INP_FILE=$1
 
-if [ -z $1 ]; then
+if [ -z "$INP_FILE" ]; then
   echo "$( basename $0 ) <input>"
 
   exit 1
