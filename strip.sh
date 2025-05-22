@@ -9,13 +9,13 @@ BIN_PATH=$APP_ROOT/bin
 INP_FILE=$1
 OUTP_FILE=$2
 
-TMP_FILE=$TMP_PATH/$INP_FILE.tmp
-
 if [ -z $INP_FILE ]; then
   echo "$( basename $0 ) <input> [output]"
 
   exit 1
 fi
+
+TMP_FILE=$TMP_PATH/$( basename $INP_FILE ).tmp
 
 if [ -z $OUTP_FILE ]; then
   OUTP_FILE=$INP_FILE
