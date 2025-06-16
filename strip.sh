@@ -17,7 +17,7 @@ fi
 
 TMP_FILE=$TMP_PATH/$( basename "$INP_FILE" ).tmp
 
-if [ -z $OUTP_FILE ]; then
+if [ -z "$OUTP_FILE" ]; then
   OUTP_FILE=$INP_FILE
 fi
 
