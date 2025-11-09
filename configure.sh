@@ -7,7 +7,7 @@ TMP_PATH=$APP_ROOT/tmp
 BIN_PATH=$APP_ROOT/bin
 
 FFMPEG_URL=https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
-EXIFTOOL_URL=https://exiftool.org/Image-ExifTool-12.98.tar.gz
+EXIFTOOL_URL=https://sourceforge.net/projects/exiftool/files/Image-ExifTool-13.40.tar.gz
 
 if [ ! -d $BIN_PATH ]; then
   mkdir $BIN_PATH
@@ -28,6 +28,6 @@ cd $USER_PATH
 
 ln -sfv $TMP_PATH/ffmpeg-7.0.2-amd64-static/ffmpeg $BIN_PATH/
 ln -sfv $TMP_PATH/ffmpeg-7.0.2-amd64-static/ffprobe $BIN_PATH/
-ln -sfv $TMP_PATH/Image-ExifTool-12.98/exiftool $BIN_PATH/
+ln -sfv $TMP_PATH/Image-ExifTool-13.40/exiftool $BIN_PATH/
 
 exit 0
