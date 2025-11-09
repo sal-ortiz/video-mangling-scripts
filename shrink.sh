@@ -32,7 +32,8 @@ TMP_FILE=$( readlink --canonicalize "$TMP_PATH/$( basename "$INP_FILE" ).tmp" )
 
 cp -fv "$( readlink --canonicalize "$USER_PATH/$INP_FILE" )" "$TMP_FILE"
 
-"$BIN_PATH/ffmpeg" -y -i "$TMP_FILE" -vcodec libx265 -crf $CRF_VAL -vf scale=-2:$IMG_HEIGHT "$( readlink --canonicalize "$USER_PATH/$OUTP_FILE" )"
+# TODO: try the "volume=1.5" switch to adjust volume after mixing down 5.1 audio
+"$BIN_PATH/ffmpeg" -y -i "$TMP_FILE" -vcodec libx265 -crf $CRF_VAL -ac 2 -vf scale=-2:$IMG_HEIGHT "$( readlink --canonicalize "$USER_PATH/$OUTP_FILE" )"
 
 rm -fv "$TMP_FILE"
 
