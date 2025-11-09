@@ -11,14 +11,14 @@ BIN_PATH=$APP_ROOT/bin
 CRF_VAL=$1
 
 # scale down to this given screen width
-IMG_WIDTH=$2
+IMG_HEIGHT=$2
 
 INP_FILE=$3
 OUTP_FILE=$4
 
 
-if [ -z "$INP_FILE" ] || [ -z "$CRF_VAL" ] || [ -z "$IMG_WIDTH" ]; then
-  echo "$( basename $0 ) <crf> <width> <input> [output]"
+if [ -z "$INP_FILE" ] || [ -z "$CRF_VAL" ] || [ -z "$IMG_HEIGHT" ]; then
+  echo "$( basename $0 ) <crf> <height> <input> [output]"
 
   exit 1
 fi
@@ -32,7 +32,7 @@ TMP_FILE=$( readlink --canonicalize "$TMP_PATH/$( basename "$INP_FILE" ).tmp" )
 
 cp -fv "$( readlink --canonicalize "$USER_PATH/$INP_FILE" )" "$TMP_FILE"
 
-"$BIN_PATH/ffmpeg" -y -i "$TMP_FILE" -vcodec libx265 -crf $CRF_VAL -vf scale=-2:$IMG_WIDTH "$( readlink --canonicalize "$USER_PATH/$OUTP_FILE" )"
+"$BIN_PATH/ffmpeg" -y -i "$TMP_FILE" -vcodec libx265 -crf $CRF_VAL -vf scale=-2:$IMG_HEIGHT "$( readlink --canonicalize "$USER_PATH/$OUTP_FILE" )"
 
 rm -fv "$TMP_FILE"
 
