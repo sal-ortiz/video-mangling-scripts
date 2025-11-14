@@ -41,7 +41,7 @@ if "%OUTP_FILE%" == "" (
 copy /y /v /d "%INP_FILE%" "%TMP_FILE%"
 
 ::TODO: try the -af "volume=1.5" switch to adjust volume after mixing down 5.1 audio
-%BIN_PATH%\ffmpeg -y -hwaccel auto -i "%TMP_FILE%" -vcodec libx265 -crf %CRF_VAL% -ac 2 -vf scale=-2:%IMG_HEIGHT% "%OUTP_FILE%"
+%BIN_PATH%\ffmpeg -y -hwaccel auto -i "%TMP_FILE%" -map_metadata 0 -vcodec libx265 -crf %CRF_VAL% -ac 2 -vf scale=-2:%IMG_HEIGHT% "%OUTP_FILE%"
 
 del /s /q /f "%TMP_FILE%"
 
