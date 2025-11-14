@@ -17,6 +17,7 @@ if [ -z $OUTP_FILE ]; then
   OUTP_FILE=$INP_FILE.mp3
 fi
 
-$BIN_PATH/ffmpeg -i $INP_FILE -f mp3 -ab 192000 -vn $OUTP_FILE
+# TODO: use -ab <sampling rate> to force output sampling rate.
+$BIN_PATH/ffmpeg -i $INP_FILE -f mp3 -vn $OUTP_FILE
 
 exit 0
