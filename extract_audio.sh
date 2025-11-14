@@ -18,6 +18,6 @@ if [ -z $OUTP_FILE ]; then
 fi
 
 # TODO: use -ab <sampling rate> to force output sampling rate.
-$BIN_PATH/ffmpeg -i $INP_FILE -f mp3 -vn $OUTP_FILE
+$BIN_PATH/ffmpeg -y -i $INP_FILE -f mp3 -vn $OUTP_FILE
 
 exit 0
