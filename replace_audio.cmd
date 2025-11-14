@@ -12,13 +12,15 @@ set OUTP_FILE=%~3
 
 set TMP_FILE=%TMP_PATH%\%VID_INPUT%.tmp
 
+set USAGE_STR="%0 <video> <audio> [output]"
+
 if "%VID_INPUT%" == "" (
-  echo "%0 <video> <audio> [output]"
+  echo %USAGE_STR%
   exit /b 1
 )
 
 if "%AUD_INPUT%" == "" (
-  echo "%0 <video> <audio> [output]"
+  echo %USAGE_STR%
   exit /b 1
 )
 
