@@ -19,6 +19,6 @@ if "%OUTP_FILE%" == "" (
 )
 
 # TODO: use -ab <sampling rate> to force output sampling rate.
-%BIN_PATH%\ffmpeg -i "%INP_FILE%" -f mp3 -vn "%OUTP_FILE%"
+%BIN_PATH%\ffmpeg -y -i "%INP_FILE%" -f mp3 -vn "%OUTP_FILE%"
 
 exit /b 0
