@@ -6,16 +6,30 @@
 set TMP_PATH=.\tmp
 set BIN_PATH=.\bin
 
-set INP_FILE=%~1
-set OUTP_FILE=%~2
+:: the lower the value the higher the bitrate (24~30 is a good medium)
+set CRF_VAL=%1
+set IMG_HEIGHT=%2
 
+set INP_FILE=%~3
+set OUTP_FILE=%~4
 set TMP_FILE=%TMP_PATH%\%INP_FILE%.tmp
 
-:: the lower the value the higher the bitrate (24~30 is a good medium)
-set CRF_VAL=20
+set USAGE_STR="%0 <CRF> <IMG_HEIGHT> <INPUT> [OUTPUT]"
+
+if "%CRF_VAL%" == "" (
+  echo %USAGE_STR%
+
+  exit /b 1
+)
+
+if "%IMG_HEIGHT%" == "" (
+  echo %USAGE_STR%
+
+  exit /b 1
+)
 
 if "%INP_FILE%" == "" (
-  echo "%0 <input> [output]"
+  echo %USAGE_STR%
 
   exit /b 1
 )
@@ -24,12 +38,11 @@ if "%OUTP_FILE%" == "" (
   set OUTP_FILE=%INP_FILE%
 )
 
-
 copy /y /v /d "%INP_FILE%" "%TMP_FILE%"
 
-%BIN_PATH%\ffmpeg -y -i "%TMP_FILE%" -vcodec libx265 -crf %CRF_VAL% "%OUTP_FILE%"
+::TODO: try the -af "volume=1.5" switch to adjust volume after mixing down 5.1 audio
+%BIN_PATH%\ffmpeg -y -hwaccel auto -i "%TMP_FILE%" -vcodec libx265 -crf %CRF_VAL% -ac 2 -vf scale=-2:%IMG_HEIGHT% "%OUTP_FILE%"
 
-
-del /q /f "%TMP_FILE%"
+del /s /q /f "%TMP_FILE%"
 
 exit /b 0
