@@ -18,6 +18,7 @@ if "%OUTP_FILE%" == "" (
   set OUTP_FILE=%~n1.mp3
 )
 
-%BIN_PATH%\ffmpeg -i "%INP_FILE%" -f mp3 -ab 192000 -vn "%OUTP_FILE%"
+# TODO: use -ab <sampling rate> to force output sampling rate.
+%BIN_PATH%\ffmpeg -i "%INP_FILE%" -f mp3 -vn "%OUTP_FILE%"
 
 exit /b 0
