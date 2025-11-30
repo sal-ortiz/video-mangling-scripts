@@ -3,8 +3,12 @@
 ::setlocal EnableExtensions EnableDelayedExpansion
 ::title scaling down and compressing video
 
-set TMP_PATH=.\tmp
-set BIN_PATH=.\bin
+set USER_PATH=%CD%
+set SCRIPT_PATH=%~dp0
+
+set TMP_PATH=%SCRIPT_PATH%\tmp
+set BIN_PATH=%SCRIPT_PATH%\bin
+
 
 if exist %BIN_PATH% (
   del /s /q %BIN_PATH%
