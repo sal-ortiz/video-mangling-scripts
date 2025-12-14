@@ -3,12 +3,16 @@
 ::setlocal EnableExtensions EnableDelayedExpansion
 ::title scaling down and compressing video
 
-set TMP_PATH=.\tmp
-set BIN_PATH=.\bin
+set USER_PATH=%CD%
+set SCRIPT_PATH=%~dp0
+
+set TMP_PATH=%SCRIPT_PATH%\tmp
+set BIN_PATH=%SCRIPT_PATH%\bin
 
 set VID_INPUT=%~1
 set AUD_INPUT=%~2
 set OUTP_FILE=%~3
+
 
 set TMP_FILE=%TMP_PATH%\%VID_INPUT%.tmp
 

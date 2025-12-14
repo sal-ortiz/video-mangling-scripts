@@ -3,8 +3,12 @@
 ::setlocal EnableExtensions EnableDelayedExpansion
 ::title scaling down and compressing video
 
-set TMP_PATH=.\tmp
-set BIN_PATH=.\bin
+set USER_PATH=%CD%
+set SCRIPT_PATH=%~dp0
+
+set TMP_PATH=%SCRIPT_PATH%\tmp
+set BIN_PATH=%SCRIPT_PATH%\bin
+
 
 :: the lower the value the higher the bitrate (24~30 is a good medium)
 set CRF_VAL=%1
@@ -12,7 +16,7 @@ set IMG_HEIGHT=%2
 
 set INP_FILE=%~3
 set OUTP_FILE=%~4
-set TMP_FILE=%TMP_PATH%\%INP_FILE%.tmp
+set TMP_FILE=%TMP_PATH%\%~nx3%.tmp
 
 set USAGE_STR="%0 <CRF> <IMG_HEIGHT> <INPUT> [OUTPUT]"
 
@@ -34,9 +38,7 @@ if "%INP_FILE%" == "" (
   exit /b 1
 )
 
-if "%OUTP_FILE%" == "" (
-  set OUTP_FILE=%INP_FILE%
-)
+if "%OUTP_FILE%" == "" set OUTP_FILE=%INP_FILE%
 
 copy /y /v /d "%INP_FILE%" "%TMP_FILE%"
 
