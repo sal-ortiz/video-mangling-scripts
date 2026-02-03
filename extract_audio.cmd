@@ -13,7 +13,7 @@ set OUTP_FILE=%~2
 
 
 if "%INP_FILE%" == "" (
-  echo "%0 <input> <output>"
+  echo "%0 <input> [output]"
   exit /b 1
 )
 
