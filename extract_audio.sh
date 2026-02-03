@@ -9,7 +9,7 @@ INP_FILE=$1
 OUTP_FILE=$2
 
 if [ -z $INP_FILE ]; then
-  echo "$( basename $0 ) <input> <output>"
+  echo "$( basename $0 ) <input> [output]"
   exit 1
 fi
 
