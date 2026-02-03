@@ -3,7 +3,7 @@
 ::setlocal EnableExtensions EnableDelayedExpansion
 ::title scaling down and compressing video
 
-set EXIF_VER=13.41_64
+set EXIF_VER=13.43_64
 
 set USER_PATH=%CD%
 set SCRIPT_PATH=%~dp0
