@@ -18,10 +18,10 @@ if "%INP_FILE%" == "" (
 )
 
 if "%OUTP_FILE%" == "" (
-  set OUTP_FILE=%~n1.mp3
+  set OUTP_FILE=%~n1.wav
 )
 
 # TODO: use -ab <sampling rate> to force output sampling rate.
-%BIN_PATH%\ffmpeg -y -i "%INP_FILE%" -f mp3 -vn "%OUTP_FILE%"
+%BIN_PATH%\ffmpeg -y -i "%INP_FILE%" -f wav -vn "%OUTP_FILE%"
 
 exit /b 0
