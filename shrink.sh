@@ -27,8 +27,7 @@ if [ -z "$OUTP_FILE" ]; then
   OUTP_FILE=$INP_FILE
 fi
 
-
-TMP_FILE=$( readlink --canonicalize "$TMP_PATH/$( basename "$INP_FILE" ).tmp" )
+TMP_FILE=$TMP_PATH/"${INP_FILE%.*}".tmp."${INP_FILE##*.}"
 
 cp -fv "$( readlink --canonicalize "$USER_PATH/$INP_FILE" )" "$TMP_FILE"
 
