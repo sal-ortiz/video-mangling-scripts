@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 EXIF_VER=13.49
+FFMPEG_VER=7.0.2
 
 APP_ROOT=$( readlink --canonicalize $( dirname $0 ) )
 USER_PATH=$( pwd )
@@ -28,8 +29,8 @@ tar -xvf ./ffmpeg.tar.xz
 tar -xvf ./exiftool.tar.gz
 cd $USER_PATH
 
-ln -sfv $TMP_PATH/ffmpeg-7.0.2-amd64-static/ffmpeg $BIN_PATH/
-ln -sfv $TMP_PATH/ffmpeg-7.0.2-amd64-static/ffprobe $BIN_PATH/
+ln -sfv $TMP_PATH/ffmpeg-$FFMPEG_VER-amd64-static/ffmpeg $BIN_PATH/
+ln -sfv $TMP_PATH/ffmpeg-$FFMPEG_VER-amd64-static/ffprobe $BIN_PATH/
 ln -sfv $TMP_PATH/Image-ExifTool-$EXIF_VER/exiftool $BIN_PATH/
 
 exit 0
