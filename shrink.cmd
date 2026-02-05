@@ -16,7 +16,7 @@ set IMG_HEIGHT=%2
 
 set INP_FILE=%~3
 set OUTP_FILE=%~4
-set TMP_FILE=%TMP_PATH%\%~n1.tmp%~x1
+set TMP_FILE=%TMP_PATH%\%~n3.tmp%~x3
 
 set USAGE_STR="%0 <CRF> <IMG_HEIGHT> <INPUT> [OUTPUT]"
 
