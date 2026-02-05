@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-EXIF_VER=13.43
+EXIF_VER=13.49
 
 APP_ROOT=$( readlink --canonicalize $( dirname $0 ) )
 USER_PATH=$( pwd )
