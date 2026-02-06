@@ -40,7 +40,7 @@ if "%OUTP_FILE%" == "" set OUTP_FILE=%INP_FILE%
 
 copy /y /v /d "%INP_FILE%" "%TMP_FILE%"
 
-%BIN_PATH%\ffmpeg -y -i "%TMP_FILE%" -c:a ac3 -ac %NUM_CHANNELS% -filter:a "volume=%VOL_MULTIPLIER%" "%OUTP_FILE%"
+%BIN_PATH%\ffmpeg -y -i "%TMP_FILE%" -c:v copy -c:a aac -ac %NUM_CHANNELS% -filter:a "volume=%VOL_MULTIPLIER%" "%OUTP_FILE%"
 
 del /s /q /f "%TMP_FILE%"
 
