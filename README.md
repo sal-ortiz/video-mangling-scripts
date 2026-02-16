@@ -7,6 +7,7 @@ Shell
 
 Download and set up [ffmpeg](https://www.ffmpeg.org/) and [ExifTool](https://exiftool.org/) to the repo's `tmp` folder and creates the `bin` folder within the repo.
 
+
 ## Teardown
 Windows
 `.\clean.cmd`
@@ -16,25 +17,6 @@ Shell
 
 Delete `tmp` and `bin` folders, leaving the repo as it was when it was first cloned.
 
-
-## Check File Integrity
-Windows
-`.\check.cmd <INPUT>`
-
-Shell
-`sh ./check.sh <INPUT>`
-
-Verifies the integrity of the video file provided as `<INPUT>`.
-
-
-## Extract Audio
-Windows
-`.\extract_audio.cmd <INPUT> [OUTPUT]`
-
-Shell
-`sh ./extract_audio.sh <INPUT> [OUTPUT]`
-
-Extracts audio from video file given as `<INPUT>` to the WAV file optionally given as `[OUTPUT]`. If no output file is provided, the output audio file will have the same name as the input file.
 
 ## Get Info and Metadata
 Windows
@@ -46,25 +28,15 @@ Shell
 Displays information and metadata stored within the video file given as `<INPUT>`
 
 
-## Mix Down Audio
+## Check File Integrity
 Windows
-`.\mix_down_audio.cmd <CHANNELS> <VOLUME> <INPUT> [OUTPUT]`
+`.\check.cmd <INPUT>`
 
 Shell
-`sh ./mix_down_audio.sh <CHANNELS> <VOLUME> <INPUT> [OUTPUT]`
+`sh ./check.sh <INPUT>`
 
-Reduces number of channels, adjusts volume, and reencodes audio in AAC format from a video given as `<INPUT>` and outputs to file optionally given as `[OUTPUT]`. If no output file is provided, the input file is overwritten.
-- `<CHANNELS>`: The desired number of channels.
-- `<VOLUME>`: A multiplier indicating the increase/decrease of the audio volume (1.0 leaves audio as is).
+Verifies the integrity of the video file provided as `<INPUT>`.
 
-## Replace Audio
-Windows
-`.\replace_audio.cmd <INPUT> <AUDIO> [OUTPUT]`
-
-Shell
-`sh ./replace_audio.sh <INPUT> <AUDIO> [OUTPUT]`
-
-Overwrites the audio from the video given as `<INPUT>` using the audio file given as `<AUDIO>` and output to the file optionally given as `[OUTPUT]`. If no output file is provided, the input file is overwritten.
 
 ## Shrink Video
 Windows
@@ -88,6 +60,39 @@ Shell
 
 Clears out metadata from the video file given as `<INPUT>` and saves output to the file given as `[OUTPUT]`. If no output file is provided, the input file is overwritten.
 
+
+## Mix Down Audio
+Windows
+`.\mix_down_audio.cmd <CHANNELS> <VOLUME> <INPUT> [OUTPUT]`
+
+Shell
+`sh ./mix_down_audio.sh <CHANNELS> <VOLUME> <INPUT> [OUTPUT]`
+
+Reduces number of channels, adjusts volume, and reencodes audio in AAC format from a video given as `<INPUT>` and outputs to file optionally given as `[OUTPUT]`. If no output file is provided, the input file is overwritten.
+- `<CHANNELS>`: The desired number of channels.
+- `<VOLUME>`: A multiplier indicating the increase/decrease of the audio volume (1.0 leaves audio as is).
+
+
+## Extract Audio
+Windows
+`.\extract_audio.cmd <INPUT> [OUTPUT]`
+
+Shell
+`sh ./extract_audio.sh <INPUT> [OUTPUT]`
+
+Extracts audio from video file given as `<INPUT>` to the WAV file optionally given as `[OUTPUT]`. If no output file is provided, the output audio file will have the same name as the input file.
+
+
+## Replace Audio
+Windows
+`.\replace_audio.cmd <INPUT> <AUDIO> [OUTPUT]`
+
+Shell
+`sh ./replace_audio.sh <INPUT> <AUDIO> [OUTPUT]`
+
+Overwrites the audio from the video given as `<INPUT>` using the audio file given as `<AUDIO>` and output to the file optionally given as `[OUTPUT]`. If no output file is provided, the input file is overwritten.
+
+
 ## Convert WAV Audio to MP3
 Windows
 `.\wav_to_mp3.cmd <INPUT> [OUTPUT]`
@@ -97,8 +102,7 @@ Shell
 
 Compresses the WAV file given as `<INPUT>` into an 320kbps CBR MP3 file named after the name provided as `[OUTPUT]`. If no output file is provided, the output file is named after the input file.
 
+
 ## NOTES
 * Scripts currently _DO NOT_ support the use of wildcards as file inputs.
 * Some of these scripts are destructive and should be used with caution.
-
-
