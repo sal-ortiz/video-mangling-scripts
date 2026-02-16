@@ -3,7 +3,7 @@
 ::setlocal EnableExtensions EnableDelayedExpansion
 ::title scaling down and compressing video
 
-set EXIF_VER=13.49_64
+set EXIF_VER=13.50_64
 set FFMPEG_VER=7.1
 
 set USER_PATH=%CD%
@@ -12,9 +12,8 @@ set SCRIPT_PATH=%~dp0
 set TMP_PATH=%SCRIPT_PATH%\tmp
 set BIN_PATH=%SCRIPT_PATH%\bin
 
-
-set FFMPEG_URL=https://github.com/GyanD/codexffmpeg/releases/download/%FFMPEG_VER%/ffmpeg-%FFMPEG_VER%-full_build-shared.zip
-set EXIFTOOL_URL=https://exiftool.org/exiftool-%EXIF_VER%.zip
+set FFMPEG_URL=https://download.dorkusmalorkus.org/ffmpeg-%FFMPEG_VER%-full_build-shared.zip
+set EXIFTOOL_URL=https://download.dorkusmalorkus.org/exiftool-%EXIF_VER%.zip
 
 if not exist %TMP_PATH%\ (
   mkdir %TMP_PATH%
