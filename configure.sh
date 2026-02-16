@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-EXIF_VER=13.49
+EXIF_VER=13.50
 FFMPEG_VER=7.0.2
 
 APP_ROOT=$( readlink --canonicalize $( dirname $0 ) )
@@ -9,8 +9,8 @@ USER_PATH=$( pwd )
 TMP_PATH=$APP_ROOT/tmp
 BIN_PATH=$APP_ROOT/bin
 
-FFMPEG_URL=https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
-EXIFTOOL_URL=https://sourceforge.net/projects/exiftool/files/Image-ExifTool-$EXIF_VER.tar.gz
+FFMPEG_URL=https://download.dorkusmalorkus.org/ffmpeg-release-amd64-static.tar.xz
+EXIFTOOL_URL=https://download.dorkusmalorkus.org/Image-ExifTool-$EXIF_VER.tar.gz
 
 if [ ! -d $BIN_PATH ]; then
   mkdir $BIN_PATH
