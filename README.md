@@ -38,6 +38,16 @@ Shell
 Verifies the integrity of the video file provided as `<INPUT>`.
 
 
+## Convert Video
+Windows
+`.\convert.cmd <INPUT> <OUTPUT>`
+
+Shell
+`sh ./convert.sh <INPUT> <OUTPUT>`
+
+Converts the file given as `<INPUT>` into the file given as `<OUTPUT>`. No reencoding is performed; The video's audio and video streams, as well as most metadata, are copied into a the new container given by the `<OUTPUT>` file's extension.
+
+
 ## Shrink Video
 Windows
 `.\shrink.cmd <CRF> <HEIGHT> <INPUT> [OUTPUT]`
