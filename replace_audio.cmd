@@ -15,7 +15,7 @@ set OUTP_FILE=%~3
 
 set TMP_FILE=%TMP_PATH%\%~n1.tmp%~x1
 
-set USAGE_STR="%0 <video> <audio> [output]"
+set USAGE_STR="%~nx0 <video> <audio> [output]"
 
 if "%VID_INPUT%" == "" (
   echo %USAGE_STR%

@@ -16,7 +16,7 @@ set OUTP_FILE=%~4
 
 set TMP_FILE=%TMP_PATH%\%~n3.tmp%~x3
 
-set USAGE_STR="%0 <channels> <volume> <input> [output]"
+set USAGE_STR="%~nx0 <channels> <volume> <input> [output]"
 
 if "%NUM_CHANNELS%" == "" (
   echo %USAGE_STR%

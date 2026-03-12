@@ -11,7 +11,7 @@ set BIN_PATH=%SCRIPT_PATH%\bin
 set INP_FILE=%~1
 
 if "%INP_FILE%" == "" (
-  echo "%0 <input>"
+  echo "%~nx0 <input>"
 
   exit /b 1
 )

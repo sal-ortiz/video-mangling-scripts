@@ -18,7 +18,7 @@ set INP_FILE=%~3
 set OUTP_FILE=%~4
 set TMP_FILE=%TMP_PATH%\%~n3.tmp%~x3
 
-set USAGE_STR="%0 <CRF> <IMG_HEIGHT> <INPUT> [OUTPUT]"
+set USAGE_STR="%~nx0 <CRF> <IMG_HEIGHT> <INPUT> [OUTPUT]"
 
 if "%CRF_VAL%" == "" (
   echo %USAGE_STR%

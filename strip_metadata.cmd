@@ -15,7 +15,7 @@ set OUTP_FILE=%~2
 set TMP_FILE=%TMP_PATH%\%~n1.tmp%~x1
 
 if "%INP_FILE%" == "" (
-  echo "%0 <input> [output]"
+  echo "%~nx0 <input> [output]"
 
   exit /b 1
 )
