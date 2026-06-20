@@ -15,7 +15,7 @@ if [ -z "$INP_FILE" ]; then
   exit 1
 fi
 
-TMP_FILE=$TMP_PATH/$( basename "$INP_FILE" ).tmp
+TMP_FILE=$TMP_PATH/"${INP_FILE%.*}".tmp."${INP_FILE##*.}"
 
 if [ -z "$OUTP_FILE" ]; then
   OUTP_FILE=$INP_FILE
@@ -24,8 +24,8 @@ fi
 
 cp -fv "$INP_FILE" "$TMP_FILE"
 
-$BIN_PATH/exiftool -r -overwrite_original -all= "$TMP_FILE"
+$BIN_PATH/ffmpeg -y -i "$TMP_FILE" -map_metadata -1 -c:v copy -c:a copy "$OUTP_FILE"
 
-mv -fv "$TMP_FILE" "$OUTP_FILE"
+rm -fv "$TMP_FILE"
 
 exit 0
