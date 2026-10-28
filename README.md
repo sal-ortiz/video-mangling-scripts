@@ -115,4 +115,4 @@ Compresses the WAV file given as `<INPUT>` into an 320kbps CBR MP3 file named af
 
 ## NOTES
 * Scripts currently _DO NOT_ support the use of wildcards as file inputs.
-* Some of these scripts are destructive and should be used with caution.
+* Some of these scripts are destructive and should be <ins>used with caution<ins>.
