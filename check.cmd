@@ -16,6 +16,6 @@ if "%INP_FILE%" == "" (
   exit /b 1
 )
 
-%BIN_PATH%\ffmpeg -stats -v error -i %INP_FILE% -f null -
+%BIN_PATH%\ffmpeg -stats -v error -i "%INP_FILE%" -f null -
 
 exit /b 0
